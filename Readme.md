@@ -86,7 +86,7 @@ cd franchise-api
 **Step 2 — Build and start all containers**
 
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 
 Docker will:
@@ -104,10 +104,10 @@ curl http://localhost:8080/api/franchises/1/top-stock
 
 ```bash
 # Stop containers but keep database data
-docker-compose down
+docker compose down
 
 # Stop containers and delete database data (fresh start)
-docker-compose down -v
+docker compose down -v
 ```
 
 ---
@@ -143,7 +143,7 @@ Swagger URL: `http://localhost:8080/webjars/swagger-ui/index.html`
 # 1. Create a franchise
 curl -X POST http://localhost:8080/api/franchises \
   -H "Content-Type: application/json" \
-  -d '{"name": "Medellin}'
+  -d '{"name": "Medellin"}'
 
 # 2. Add a branch office (franchiseId = 1)
 curl -X POST http://localhost:8080/api/franchises/1/branches \
